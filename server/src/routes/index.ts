@@ -1,9 +1,10 @@
-import { Router } from 'express';
-import { healthRouter } from './health.routes';
+import { Router } from "express";
+import { healthRouter } from "./health.routes";
+import { researchRouter } from "./research.routes";
 
 const router = Router();
 
-// Mount sub-routers
-router.use('/', healthRouter);
+router.use("/", healthRouter);
+router.use("/", researchRouter);
 
 export { router as apiRouter };
