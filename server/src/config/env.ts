@@ -17,7 +17,7 @@ export const config = {
   isProduction: process.env.NODE_ENV === "production",
   tavilyApiKey: required("TAVILY_API_KEY"),
   geminiApi: required("GEMINI_API_KEY"),
-  model: process.env.MODEL ?? "gemini-3.8-flash-lite",
+  model: process.env.MODEL ?? "gemini-3.5-flash-lite",
   maxSources: 8,
   maxCharsPerSource: 6000,
   maxRevisions: 1,
