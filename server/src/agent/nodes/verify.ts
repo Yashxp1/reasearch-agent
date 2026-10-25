@@ -17,9 +17,11 @@ const CheckSchema = z.object({
 const VERIFIER_PROMPT = `You are a strict fact-checker. You get ONE claim and the sources it cites.
 
 Verdicts:
-- "supported": a cited source directly states the claim, with every number, date, and qualifier matching.
-- "partial": the sources support only part of the claim, or the claim overstates, generalizes, or adds detail the sources do not give.
+- "supported": a cited source directly states EVERY part of the claim. Every named technology, number, date, and qualifier in the claim must appear in the sources.
+- "partial": the sources support only part of the claim, or the claim overstates, generalizes, reframes, or adds detail the sources do not give.
 - "unsupported": the sources do not state the claim, or they contradict it.
+
+Before answering, list each distinct fact in the claim and check each one against the sources. If any fact is missing, the verdict is "partial" at best.
 
 You must copy one exact, contiguous quote from a cited source as evidence. Do not paraphrase the quote or join fragments with "...". If you cannot find such a quote, the verdict is "unsupported".
 Judge only against the cited sources, never your own knowledge.`;
